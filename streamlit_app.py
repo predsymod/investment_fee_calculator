@@ -50,10 +50,10 @@ def main():
     difference_in_fee_paid = total_investment1 - total_investment2
 
     # Display results
-    st.write(f"After {years} years, the total investment with Fee 1 will be ${total_investment1:,.0f}.")
-    st.write(f"After {years} years, the total investment with Fee 2 will be ${total_investment2:,.0f}.")
+    st.write(f"After {years} years, the total investment with the Lower Fee will be ${total_investment1:,.0f}.")
+    st.write(f"After {years} years, the total investment with the Higher Fee will be ${total_investment2:,.0f}.")
 #    st.markdown(f"**Difference in investment due to fees: ${difference_in_fee_paid:,.0f}.**")
-    st.markdown(f"**Difference in investment due to fees: <u>${difference_in_fee_paid:,.0f}</u>.**", unsafe_allow_html=True)
+    st.markdown(f"**Difference in investment due to higher fees: <u>${difference_in_fee_paid:,.0f}</u>.**", unsafe_allow_html=True)
 
     # Prepare data for line chart
     chart_data = pd.DataFrame({
@@ -65,9 +65,9 @@ def main():
     st.line_chart(chart_data)
 
     # Display tables
-    st.write("Yearly details for Fee 1:")
+    st.write("Yearly details for Fee 1 (Lower Fee):")
     st.dataframe(df1)
-    st.write("Yearly details for Fee 2:")
+    st.write("Yearly details for Fee 2 (Higher Fee):")
     st.dataframe(df2)
 
 if __name__ == "__main__":
